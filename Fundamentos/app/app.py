@@ -6,12 +6,22 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+@app.before_request
+def before_request():
+    print('Antes de la petición.....')
+
+
+@app.after_request
+def after_request(response):
+    print('Despues de la petición.....')
+    return response
 
 # @app.route('/')
 # def index():
 #     return "CodigoFacilito1234"
 
 def index():
+    print("Estamos realizando la peticion")
     # return "CodigoFacilito 14/11/2022! desde cero"
     # return render_template('index.html', titulo='Pagina principal')
     data = {
@@ -59,11 +69,16 @@ def contacto():
     return render_template('contacto.html', data=data)
 
 
+
+# HTTP: Hypertext Transfer Protocol
+# GET , POST, PUT, DELETE
+
 @app.route('/datos')
 def http_datos():
-    return f'Estos son los datos: {request.args.get("item")}'
+    return f'Estos son los datos: {request.args.get("item")} y {request.args.get("valor")}'
 
 
 if __name__ == '__main__':
     app.add_url_rule('/', view_func=index)
     app.run(debug=True, port=5500)
+
