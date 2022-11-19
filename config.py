@@ -1,10 +1,12 @@
 class Config:
-    pass
+    SECRET_KEY = 'B!1234567dasdCAS*S'
+
 
 class DevelopmentConfig(Config):
-    DEBUG=True
+    DEBUG = True
 
-config={
-    'development':DevelopmentConfig,
+
+config = {
+    'development': DevelopmentConfig,
     'default': DevelopmentConfig
 }
