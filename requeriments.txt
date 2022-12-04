@@ -1,3 +1,6 @@
-flask==2.2.2
-flask-Script==2.0.5
-flask-WTF==1.0.1
+flask=2.2.2
+flask-Script=2.0.5
+flask-WTF=1.0.1
+mysqlclient
+flask-mysql
+flask-mysqldb
