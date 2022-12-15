@@ -16,7 +16,6 @@ class DevelopmentConfig(Config):
     MAIL_USERNAME='xavier.flores.gis2@gmail.com'
     MAIL_PASSWORD=config('MAIL_PASSWORD')
 
-
 config = {
     'development': DevelopmentConfig,
     'default': DevelopmentConfig
