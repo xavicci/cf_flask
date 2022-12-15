@@ -26,6 +26,27 @@
 
     <br>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+    <br><br>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for category, message in messages  %}
+    {% if category =='warning'%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    {% endif%}
+
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
     <p class="mt-5 mb-3 text-muted">&copy; Aprendiendo Flask - XF 2022</p>
   </form>
 
