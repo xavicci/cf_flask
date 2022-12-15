@@ -1,7 +1,7 @@
 from decouple import config
 
 class Config:
-    SECRET_KEY = 'rudzxlmscaqjxaif'
+    SECRET_KEY = 'B1E$"#Esad#$S'
 
 
 class DevelopmentConfig(Config):
